@@ -1,0 +1,16 @@
+WebElement fromElement=driver.findElement(By.id("locator"));
+WebElement toElement= driver.findElement(By.id("locator"));
+TouchAction tAction=new TouchAction(driver);
+tAction.press(fromElement).moveTo(toElement).release().perform();
+
+
+
+
+   JavascriptExecutor js = (JavascriptExecutor) driver;
+            HashMap<String, String> scrollObject = new HashMap<String, String>();
+            scrollObject.put("direction", "down");
+            js.executeScript("mobile: scroll", scrollObject);
+This code will scroll downwards, you can specify how many times you wish for it to scroll by placing it into a for loop. 
+Only downside is that it is a nonspecific code. Again, this code is from one of their github answers, 
+and as I mentioned, Appium is incapable of doing any proper scrolls for iOS. At least, 
+I haven't located anything.
